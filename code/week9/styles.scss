@@ -1,0 +1,432 @@
+@import 'typography';
+@import 'icons';
+
+$sm-break: 48em;
+// colors
+$dark-gray: #727272;
+$med-gray: #b4b3b5;
+$light-gray: #eaeaea;
+$body-font: #020202;
+$link-blue: #0076b6; //why do we have both of these blues?
+$byui-blue: #056cb6;
+$byui-font: "byui open sans";
+
+// Utility classes
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+body{
+  font-family: $byui-font;
+}
+
+/* header start*/
+
+.site-banner{
+  width: 100%;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  align-items: center;
+  margin: 0 auto;
+
+  form{
+    display: none;
+  }
+}
+.site-banner__left{
+  background-color: $body-font;
+  padding: .8rem;
+  h1{
+    display: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .icon-byui-logo {
+    color: white;
+    background-color: $body-font;
+    font-size: 7vw;
+  }
+}
+.site-banner__right{
+  width: 100%;
+  height: 100%;
+  background-color: $byui-blue;
+  grid-column: 2;
+  padding: 1rem .2rem .8rem 62%;
+  a {
+    text-decoration: none;
+  }
+  .mobile-header-icon{
+    color: white;
+    background-color: $byui-blue;
+    font-size: 6vw;
+  }
+}
+.site-banner-bottom{
+  width: 100%;
+  background-color: $light-gray;
+  line-height: 1.2rem;
+  grid-column: 1/-1;
+  padding-left: 5rem;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  color: $body-font;
+  border-bottom: 1px solid black;
+}
+
+/* header end */
+
+/*interest boxes start*/
+
+.interest-boxes{
+  margin: 2rem 0;
+  img{
+    width: 100%;
+  }
+  figure{
+    margin: 2rem 0;
+    border: 1px solid $med-gray;
+    img{
+      width: 100%;
+    }
+    figcaption{
+      font-size: .9rem;
+      color: $link-blue;
+      padding: .3rem;
+      span{
+        font-weight: lighter;
+        font-size: .6rem;
+        float: right;
+        padding-top: .4rem;
+      }
+    }
+  }
+}
+
+/*interest boxes end*/
+
+/*information dropdown start*/
+
+.info-dropdown{
+  select{
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .7rem;
+    background-color: $light-gray;
+    border-radius: 5px;
+    border: 1px solid $med-gray;
+  }
+}
+
+/*information dropdown end*/
+
+/*Resources start*/
+
+.resources{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 3rem 0;
+  h2{
+    margin: 0 auto;
+    width: 100%;
+    padding: .4rem;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: white;
+    background-color: $dark-gray;
+  }
+  a{
+    text-decoration: none;
+    margin: 0 auto;
+    width: 100%;
+    padding: .4rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+    color: $link-blue;
+    background-color: #f8f9fa;
+    border-left: 1px solid $med-gray;
+    border-bottom: 1px solid $med-gray;
+    border-right: 1px solid $med-gray;
+    span{
+      font-weight: lighter;
+      font-size: .6rem;
+      float: right;
+      padding-top: .5rem;
+    }
+  }
+
+}
+
+/*Resources end*/
+
+/*Important Dates start*/
+
+.important-dates{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  margin: 0 0 3rem;
+  h2{
+    margin: 0 auto;
+    width: 100%;
+    padding: .4rem;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: white;
+    background-color: $byui-blue;
+  }
+  .date-row{
+    width: 100%;
+    border-bottom: 1px solid $med-gray;
+    padding: .4rem;
+    display: grid;
+    grid-template-columns: 1fr 2rem 3fr;
+    align-items: center;
+  }
+  .date-dates, .hyphen, .date-event{
+    font-size: .8rem;
+    padding: .3rem;
+  }
+  .date-dates{
+    font-weight: bold;
+    grid-column: 1;
+    padding-left: .4rem;
+  }
+  .hyphen{
+    grid-column: 2;
+  }
+  .date-event{
+    grid-column: 3;
+  }
+}
+
+/*Important Dates end*/
+
+/*Newsroom start*/
+
+.newsroom{
+  margin-top: 1.5rem;
+  h2{
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .article{
+    display: block;
+    border-top: 1px solid $med-gray;
+  }
+  .article-image{
+    display: none;
+  }
+  .article-date{
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 11px;
+    padding: 1.1rem 0;
+    
+  }
+  .article-link{
+    text-decoration: none;
+    color: $link-blue;
+    font-weight: bold;
+  }
+  .article-summary{
+    color: $body-font;
+    margin-bottom: 3rem;
+  }
+  .news-btn-container{
+    display: block;
+    width: 98%;
+    height: 4rem;
+  }
+  .news-btn{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background-color: $link-blue;
+    padding: .4rem 1.4rem;
+    border-radius: 4px;
+    float: right;
+    text-align: center;
+  }
+}
+
+/*Newsroom end*/
+
+/*university message start*/
+
+.university-message{
+  border-radius: 4px;
+  border: 1px solid $med-gray;
+  margin-top: 2rem;
+  h2{
+    background-color: $light-gray;
+    color: $body-font;
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: .4rem;
+    padding-left: 1rem;
+    border-bottom: 1px solid $med-gray;
+  }
+  img{
+    padding: .5rem .5rem .2rem;
+    width: 100%;
+  }
+}
+
+/*university message end*/
+
+/*chat */
+
+.chat-contianer{
+  background-color: $link-blue;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1rem;
+  .icon-chat{
+    display: inline-block;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1.3rem;
+  }
+}
+
+/*chat */
+
+/*Taylor Graphic start*/
+
+.taylor-container{
+  background-image: url(http://www.byui.edu/prebuilt/stylenew/images/foot/taylor_graphic.gif);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100%;
+  margin: 0 auto;
+  height: 11rem;
+  border-bottom: 1px solid $med-gray;
+}
+.under-taylor{
+  width: 100%;
+  margin: 0 auto;
+  height: 3rem;
+  background-color: $light-gray;
+  border-bottom: 1px solid $body-font;
+}
+
+/*Taylor Graphic end*/
+
+/*tablet View start*/
+
+@media only screen and (min-width: 32em){
+  .interest-box{
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+
+
+/*tablet View end*/
+
+/*Desktop View start*/
+
+@media only screen and (min-width: 52em){
+  /*initial grid setup desktop*/
+  main{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+  .interest-boxes, .newsroom{
+    grid-column: 1;
+  }
+  .info-dropdown, .resources, .important-dates, .university-message{
+    grid-column: 2;
+  }
+  /*interest boxes start desktop*/
+  .interest-boxes{
+    grid-row: 1/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .interest-box-large{
+    grid-column: 1/4;
+    grid-row: 1;
+    margin: 0 auto;
+  }
+  .interest-boxes{
+    margin: 0;
+    figure{
+      margin: 0;
+    }
+  }
+  .interest-box{
+    width: 100%;
+    justify-self: start;
+  }
+  /*interest boxes end desktop*/
+  /*newsroom start desktop*/
+  .newsroom{
+    grid-row: 4/8;
+    .article-image{
+      display: block;
+      width: 30%;
+      float: left;
+      padding: 1.1rem 1.1rem 1.1rem 0;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+  /*newsroom end desktop*/
+  .resources{
+    margin: 0 auto;
+  }
+  .important-dates{
+    margin: 0 auto;
+  }
+  .university-message{
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 60em){
+  /*initial grid setup desktop*/
+  main{
+    margin: 0 auto;
+    width: 85%;
+  }
+}
+/*Desktop View end*/
